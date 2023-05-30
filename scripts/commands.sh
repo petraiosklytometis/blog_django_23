@@ -5,10 +5,10 @@ set -e
 
 while ! nc -z $POSTGRES_HOST $POSTGRES_PORT; do
   echo "🟡 Waiting for Postgres Database Startup ($POSTGRES_HOST $POSTGRES_PORT) ..."
-  sleep 0.1
+  sleep 2
 done
 
-echo "✅ Postgres Database Started Succesfully ($POSTGRES_HOST $POSTGRES_PORT)"
+echo "✅ Postgres Database Started Succesfully ($POSTGRES_HOST:$POSTGRES_PORT)"
 
 python manage.py collectstatic
 python manage.py migrate
