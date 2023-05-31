@@ -31,12 +31,13 @@ RUN python -m venv /venv && \
   /venv/bin/pip install -r /djangoapp/requirements.txt && \
   adduser --disabled-password --no-create-home duser && \
   mkdir -p /data/web/static && \
+  chmod +x manage.py && \
   mkdir -p /data/web/media && \
   chown -R duser:duser /venv && \
   chown -R duser:duser /data/web/static && \
   chown -R duser:duser /data/web/media && \
   chmod -R 755 /data/web/static && \
-  chmod -R 755 /data/web/media && \
+  chmod -R 7  55 /data/web/media && \
   chmod -R +x /scripts
 
 # Adiciona a pasta scripts e venv/bin 
