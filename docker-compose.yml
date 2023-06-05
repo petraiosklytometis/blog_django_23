@@ -1,6 +1,16 @@
 version: '3.9'
 
 services:
+
+  # initializer:
+  #   image: alpine3.18
+  #   container_name: alpine3.18
+  #   restart: "no"
+  #   entrypoint: |
+  #     /bin/sh -c "chown 8000:8000 /duser"
+  #   volumes:
+  #     - ./data/duser:/duser
+
   djangoapp:
     container_name: djangoapp
     build:
@@ -20,6 +30,6 @@ services:
     container_name: psql
     image: postgres:13-alpine
     volumes:
-      - ./data/postgres/data:/var/lib/postgresql/
+      - ./data/postgres/data:/var/lib/postgresql/data/
     env_file:
       - ./dotenv_files/.env

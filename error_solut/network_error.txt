@@ -1,0 +1,9 @@
+
+sudo rm ~/.docker/config.json
+
+docker login
+
+docker-compose up
+
+systemctl restart NetworkManager.service
+sudo service docker restart
