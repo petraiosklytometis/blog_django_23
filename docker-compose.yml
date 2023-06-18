@@ -1,16 +1,6 @@
 version: '3.9'
 
-services:
-
-  # initializer:
-  #   image: alpine3.18
-  #   container_name: alpine3.18
-  #   restart: "no"
-  #   entrypoint: |
-  #     /bin/sh -c "chown 8000:8000 /duser"
-  #   volumes:
-  #     - ./data/duser:/duser
-
+services: 
   djangoapp:
     container_name: djangoapp
     build:
